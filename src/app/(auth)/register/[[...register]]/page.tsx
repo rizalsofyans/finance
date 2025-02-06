@@ -1,6 +1,7 @@
 import { SignUp, ClerkLoading, ClerkLoaded } from '@clerk/nextjs';
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
+
 const RegisterPage = () => {
 	return (
 		<div className='min-h-screen grid grid-cols-1 lg:grid-cols-2'>
