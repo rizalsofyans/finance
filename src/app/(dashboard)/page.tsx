@@ -1,21 +1,15 @@
 'use client';
 
-import { useGetAccounts } from '@/features/accounts/api/use-get-accounts';
+import { Button } from '@/components/ui/button';
+import { useNewAccount } from '@/features/accounts/hooks/use-new-account';
 
 export default function Home() {
-	const accountsQuery = useGetAccounts();
-
-	if (accountsQuery.isLoading) {
-		return <div>Loading...</div>;
-	}
-
-	if (accountsQuery.error) {
-		return <div>Error: {accountsQuery.error.message}</div>;
-	}
+	const { onOpen } = useNewAccount();
 
 	return (
 		<>
 			<p>Authenticated Route</p>
+			<Button onClick={onOpen}>Open Sheet</Button>
 		</>
 	);
 }
